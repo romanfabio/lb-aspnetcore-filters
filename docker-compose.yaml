@@ -1,0 +1,15 @@
+services:
+  db:
+    image: mcr.microsoft.com/mssql/server:2022-latest
+    container_name: lb-db
+    ports:
+      - "1433:1433"
+    environment:
+      - "ACCEPT_EULA=Y"
+      - "SA_PASSWORD=@Qwerty123"
+    volumes:
+      - db-data:/var/opt/mssql
+  
+volumes:
+  db-data:
+    

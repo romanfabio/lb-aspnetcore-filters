@@ -1,0 +1,30 @@
+@lb_aspnetcore_filters_HostAddress = http://localhost:5095
+
+GET {{lb_aspnetcore_filters_HostAddress}}/protected/
+Accept: application/json
+Authorization: Bearer 12223456
+
+###
+POST {{lb_aspnetcore_filters_HostAddress}}/users/
+Accept: application/json
+Content-Type: application/json
+Authorization: Bearer abcdef
+
+{
+    "firstName": "Luca",
+    "lastName": "Bianchi",
+    "accessToken": "1223456",
+    "Role": "Default"
+}
+
+###
+
+GET {{lb_aspnetcore_filters_HostAddress}}/logs/
+Accept: application/json
+Authorization: Bearer 123456
+
+###
+
+GET {{lb_aspnetcore_filters_HostAddress}}/hello?lang=es
+Accept: application/json
+Authorization: Bearer 123456
